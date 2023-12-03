@@ -1,14 +1,14 @@
-package com.jonathandgorman;
+package com.jonathandgorman.days;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Main {
+public class Day1 {
     public static void main(String[] args) {
         var count = 0;
         try {
-            var inputList = Files.readAllLines(Paths.get("com.jonathandgorman.advent-of-code-2023/day1/src/main/resources/input.txt"));
+            var inputList = Files.readAllLines(Paths.get("com.jonathandgorman.advent-of-code-2023/src/main/resources/day1.txt"));
             for (String entry : inputList) {
                 var charStream = entry.chars().mapToObj(c -> (char) c);
                 var digits = charStream.filter(Character::isDigit).map(String::valueOf).toList();
