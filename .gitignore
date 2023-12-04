@@ -7,3 +7,4 @@ target/
 *.iml
 *.ipr
 .DS_Store
+advent-of-code-2023.iml
