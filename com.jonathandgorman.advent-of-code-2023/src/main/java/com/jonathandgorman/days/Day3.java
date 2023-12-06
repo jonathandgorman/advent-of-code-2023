@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class Day3 {
-    record Coordinate(int xCoordinate, int yCoordinate, char value) {}
+    record Coordinate(int xCoordinate, int yCoordinate, char value) {
+    }
+
     private static final List<Character> SYMBOLS = List.of('+', '-', '*', '@', '#', '$', '/', '&', '%', '=');
 
     public static void main(String[] args) throws IOException {
@@ -33,7 +35,7 @@ public class Day3 {
                 .toList();
 
         var partNumberSum = 0;
-        for (Coordinate coordinate: symbolCoordinates) {
+        for (Coordinate coordinate : symbolCoordinates) {
             Optional<Integer> partNumber = getAdjacentNumber(coordinate);
             if (partNumber.isPresent()) {
                 partNumberSum = partNumberSum + partNumber.get();
@@ -41,7 +43,7 @@ public class Day3 {
         }
     }
 
-    private static Optional<Integer> getAdjacentNumber(Coordinate coordinate, List<List<Coordinate>> rows) {
+    private static Optional<Integer> getAdjacentNumber(Coordinate coordinate) {
 
         var adjacentCoordinates = generateAdjacentCoordinates(coordinate);
 
@@ -52,22 +54,10 @@ public class Day3 {
             }
 
             for (int x = adjacentCoordinate.xCoordinate; x <= adjacentCoordinate.xCoordinate + 2; x++) {
-
-                var possiblePart
-                if (Character.isDigit(rows.get(coordinate.yCoordinate).get(x).value)) {
-
-                }
-
-
-
+                System.out.println(x);
             }
-
-
-
-
-
-
         }
+        return null;
     }
 
     private static List<Coordinate> generateAdjacentCoordinates(Coordinate baseCoordinate) {
